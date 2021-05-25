@@ -1,0 +1,146 @@
+@charset "UTF-8";
+@import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
+
+*{ 
+    padding: 0; margin: 0; 
+    font-family: 'Nanum Myeongjo', '맑은 고딕', 'Malgun Gothic', serif; 
+    font-size: 24px; color: #4e413c; }
+li{ list-style: none; }
+a{ text-decoration: none; }
+img{ border: none; } 
+fieldset{ border: none; } 
+button{ cursor: pointer; }
+
+/* layout */
+header{ position: fixed; top: 0; left: 0; z-index: 5000; width: 100%; min-width: 1180px; height: 150px; background-color: #fff; border-bottom: 1px solid #f2f2f2; box-sizing: border-box; }
+.htop{ position: relative; width: 100%; min-width: 1180px; height: 40px; margin: 0 auto; background-color: #333; }
+.hlogo{ width: 1180px; height: 50px; margin: 0 auto; }
+.hbottom{ width: 1180px; height: 60px; margin: 0 auto; }
+
+.footer{ position: relative; width: 100%; min-width: 1180px; height: 340px; margin: 0 auto; box-sizing: border-box; background-color: #333; }
+.sitemap{ width: 1180px; height: 50px; margin: 0 auto; }
+.ftop{ width: 100%; min-width: 1180px; height: 100px; margin: 0 auto; border-top: 1px solid #8c7e7a; }
+.fbottom{ width: 1180px; height: 190px; margin: 0 auto; }
+
+.wrap{ position: relative; width: 1180px; height: 100%; margin: 0 auto; }
+
+/* htop */
+.htop ul{ float: right; }
+.htop li{ float: left; height: 40px; line-height: 40px; margin-right: 20px; }
+.htop li:before{ 
+    position: relative; top: -2px; left: -10px; 
+    content: '|'; 
+    font-size: 10px; color: #ededed; 
+}
+.htop li:first-child:before{ content:''; }
+.htop a{ font-family: 'Noto Sans KR', sans-serif; font-size: 12px; color: #ededed; }
+
+/* hlogo */
+.hlogo h1{ float: left; width: 100%; height: 50px; text-align: center; }
+
+/* hbottom */
+.hbottom > ul{ float: left; }
+.hbottom > ul > li{ 
+    position: relative;
+    float: left; 
+    width: 234px; height: 60px; line-height: 60px; 
+    text-align: center;
+}
+/* main_nav */
+.hbottom .main_nav{ 
+    display: block; 
+    width: 100%; height: 100%; 
+    color: #333; font-size: 25px; font-weight: 500;
+}
+.hbottom .main_nav:after{
+    position: absolute; left: 0; bottom: 0;
+    content: '';
+    display: block;
+    width: 100%; height: 3px; 
+    background-color: #726763;
+    
+    transform: scaleX(0); transition: 0.3s ease-in-out;
+}
+
+/* main_nav hover */
+.hbottom > ul > li:hover .main_nav{ color: #4e413c; }
+.hbottom > ul > li:hover .main_nav:after{ transform: scaleX(1); }
+.hbottom > ul > li:hover .sub_nav{ background-color: #f5f3f3; }
+
+/* main_nav jq active */
+.hbottom .main_nav.active{ color: #4e413c; }
+
+/* sub_nav */
+.sub_nav{
+    display: none; 
+    position: absolute; 
+    top: 60px; left: 0; z-index: 1010;
+    width: 100%; height: 415px; 
+}
+
+.sub_nav > li > a{ font-size: 18px; line-height: 70px; font-weight: 400; } 
+.sub_bg{
+    display: none;
+    position: absolute; top: 150px; left: 0;
+    z-index: 1000; width: 100%; height: 415px;
+    background-color: #fff; 
+    box-sizing: border-box; box-shadow: 2px 2px 2px rgba(0,0,0,0.1);
+}
+.sub_nav > li > a:hover, .sub_nav > li > a:focus{ color: #8c7e7a; }
+
+/* stiemap */
+.sitemap ul{ float: left; }
+.sitemap > ul > li{ 
+    float: left; 
+    width: 295px; height: 50px; line-height: 50px; text-align: center;
+    border-left: 1px solid #8c7e7a; box-sizing: border-box; 
+}
+.sitemap > ul > li:last-child{ border-right: 1px solid #8c7e7a; }
+.sitemap a{ font-family: 'Noto Sans KR', sans-serif; font-size: 18px; color: #8c7e7a; }
+
+/* flogo */
+.ftop h1{ padding-top: 25px; float: left; width: 170px; height: 50px; }
+
+/* familysite */
+.family{ 
+    position: absolute; top: 70px; right: 0;
+    z-index: 100;
+    width: 220px; 
+}
+.family button{
+    display: block; 
+    width: 220px; height: 40px; 
+    border-radius: 5px; border: none; 
+    background-color: #f2f2f2; line-height: 40px; 
+}
+.family .text{ 
+    float: left; 
+    padding: 0 20px; 
+    font-family: 'Noto Sans KR', sans-serif; font-size: 18px; color: #252525;
+}
+.family .icon{ 
+    float: right; 
+    display: block;
+    width: 40px; height: 40px; 
+    border-radius: 3px; 
+    font-family: 'Noto Sans KR', sans-serif; 
+    font-size: 18px; color: #f2f2f2;
+    background-color: #464646;
+}
+.family a{ line-height: 30px; font-family: 'Noto Sans KR', sans-serif; font-size: 18px; color: #252525; }
+
+/* family-jq */
+.family ul{
+    display: none; 
+    width: 180px; height: 100px;
+    border-radius: 5px;
+    border-top: none; 
+    line-height: 15px; 
+    padding: 20px; background-color: #f2f2f2;
+}
+
+/* fbottom */
+.fbottom p{ 
+    padding-top: 20px; 
+    letter-spacing: 2px; line-height: 40px; font-family: 'Noto Sans KR', sans-serif; font-size: 14px; color: #8c7e7a; }
